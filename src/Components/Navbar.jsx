@@ -5,7 +5,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`sticky top-0 glassmorphism`}>
+      <nav className={`sticky top-0 glassmorphism z-[1000]`}>
         <ul
           id="main-list"
           className={`flex justify-between items-center w-full   h-[15vh] p-4 text-xl transition-all duration-300`}
