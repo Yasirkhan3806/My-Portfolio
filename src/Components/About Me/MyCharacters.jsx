@@ -26,7 +26,7 @@ export default function MyCharacters() {
   ];
   return (
     <>
-      <ul className={`w-full flex flex-col gap-4 text-xl`}>
+      <ul className={`w-full flex flex-col gap-4 text-xl z-10`}>
         {characters.map((items) => {
             return(
           <li className={`flex gap-2`}>

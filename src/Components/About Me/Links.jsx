@@ -37,7 +37,7 @@ export default function Links() {
         <li key={index}>
           <Tippy content={item.title}>
             <a className="cursor-pointer" target="_blank" rel="noopener noreferrer" href={item.link}>
-              <img className="h-[32px]" src={item.img} alt={item.title} />
+              <img className="h-[24px]" src={item.img} alt={item.title} />
             </a>
           </Tippy>
         </li>

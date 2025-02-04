@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { motion, useScroll } from "motion/react";
 
 export default function Navbar() {
-
-
+  const {scrollYProgress} = useScroll()
   return (
     <>
       <nav className={`sticky top-0 glassmorphism z-[1000]`}>
-        <ul
+     
+        <motion.ul
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
           id="main-list"
-          className={`flex justify-between items-center w-full   h-[15vh] p-4 text-xl transition-all duration-300`}
+          className={`flex justify-between items-center w-full  h-[15vh] p-4 text-xl transition-all duration-300`}
         >
           <li>Yasir Khan</li>
           <li>
@@ -19,7 +22,8 @@ export default function Navbar() {
               <button>darkMode</button>
             </ul>
           </li>
-        </ul>
+        </motion.ul>
+        <motion.div className={`bg-[#0dc5c5] h-[6px] origin-left`} style={{scaleX:scrollYProgress}}></motion.div>
       </nav>
     </>
   );
