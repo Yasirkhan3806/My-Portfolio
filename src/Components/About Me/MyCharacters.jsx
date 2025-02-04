@@ -2,7 +2,7 @@ import React from "react";
 import locationIcon from '../../assets/Icons/locationIcon.png';
 import codingIcon from '../../assets/Icons/codingIcon.png';
 import plusIcon from '../../assets/Icons/plusIcon.png';
-import experianceIcon from '../../assets/icons/experianceIcon.png'
+import experianceIcon from '../../assets/icons/EIcon.png'
 
 export default function MyCharacters() {
 
