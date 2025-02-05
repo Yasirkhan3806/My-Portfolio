@@ -1,6 +1,8 @@
 import React,{useState} from "react";
-import myPicture from "../../assets/Pictures/myPicBgRe.png";
+import myPicture from "../../assets/Pictures/myPicture.jpeg";
 import { motion } from "framer-motion";
+import ThreeScene from "./RotatingCube";
+
 
 export default function Contact() {
   const [animationState, setAnimationState] = useState(false);
@@ -35,10 +37,11 @@ export default function Contact() {
       ></div>
           </div>
         </div>
-        <div className={''}>
-          <img className={``} src={myPicture} alt="" />
+        <div>
+         <img className="rounded-xl" src={myPicture} alt="" />
         </div>
       </div>
+
     </>
   );
 }

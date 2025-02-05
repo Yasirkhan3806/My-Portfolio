@@ -57,7 +57,7 @@ export default function Projects() {
           });
 
           return (
-            <motion.div ref={ref} key={index} className={`flex flex-col lg:flex-row gap-6 p-4`}>
+            <motion.div ref={ref} key={index} className={`flex flex-col lg:flex-row gap-6 p-2`}>
               <motion.div
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
