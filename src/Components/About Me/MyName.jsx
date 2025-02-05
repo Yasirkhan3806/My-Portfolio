@@ -25,7 +25,7 @@ export default function MyName() {
       <motion.div
         animate={{ scale: [1, 1.2, 1] }} // Scale up and down
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} // Smooth looping
-        className={`bg-[#0dc5c5] opacity-5 h-[19rem] w-[19rem] rounded-full absolute top-[9rem] left-12`}
+        className={`bg-[#0dc5c5] opacity-5 h-[19rem] w-[19rem] rounded-full absolute top-[9rem] left-12 pointer-events-none`}
       ></motion.div>
     </>
   );
