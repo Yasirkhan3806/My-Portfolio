@@ -35,13 +35,13 @@ export default function KeySkills() {
   ];
   return (
     <>
-      <div ref={ref} className={` flex flex-col gap-5`}>
+      <div ref={ref} className={` flex flex-col gap-5 w-[36vw] md:w-[40vw]`}>
         <h2 className={`text-2xl`}>Keys Skills</h2>
         <motion.ul
           variants={listVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"} // Reacts to scrolling
-          className={`flex flex-wrap w-full gap-2`}
+          className={`flex flex-wrap  gap-2`}
         >
           {skills.map((skill) => {
             return (

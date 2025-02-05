@@ -7,7 +7,7 @@ export default function Navbar() {
     <>
       <nav className={`sticky top-0 glassmorphism z-[1000]`}>
      
-        <motion.ul
+        {/* <motion.ul
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           id="main-list"
@@ -22,7 +22,7 @@ export default function Navbar() {
               <button>darkMode</button>
             </ul>
           </li>
-        </motion.ul>
+        </motion.ul> */}
         <motion.div className={`bg-[#0dc5c5] h-[6px] origin-left`} style={{scaleX:scrollYProgress}}></motion.div>
       </nav>
     </>

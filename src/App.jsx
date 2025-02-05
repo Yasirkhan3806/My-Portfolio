@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-<MeteorBackground/>
+{/* <MeteorBackground/> */}
     <InteractiveBox/>
     <Navbar/>
     <AboutMe/>
