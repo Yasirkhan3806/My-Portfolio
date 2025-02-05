@@ -35,7 +35,7 @@ export default function KeySkills() {
   ];
   return (
     <>
-      <div ref={ref} className={` flex flex-col gap-5 w-[36vw] md:w-[40vw]`}>
+      <div ref={ref} className={` flex flex-col gap-5 w=[100vw] lg:w-[36vw] md:w-[40vw]`}>
         <h2 className={`text-2xl`}>Keys Skills</h2>
         <motion.ul
           variants={listVariants}

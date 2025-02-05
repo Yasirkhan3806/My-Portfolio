@@ -57,7 +57,7 @@ export default function Projects() {
           });
 
           return (
-            <motion.div ref={ref} key={index} className={`flex gap-6 p-4`}>
+            <motion.div ref={ref} key={index} className={`flex flex-col lg:flex-row gap-6 p-4`}>
               <motion.div
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
@@ -69,7 +69,7 @@ export default function Projects() {
                     transition: { duration: 0.5, delay: 0.2 * index },
                   },
                 }}
-                className={`w-[50vw] border-2 border-[#0DC5C5] rounded-xl shadow-lg`}
+                className={`w-[95vw] lg:w-[50vw] border-2 border-[#0DC5C5] rounded-xl shadow-lg`}
               >
                 <img
                   className={`rounded-xl`}
@@ -79,7 +79,7 @@ export default function Projects() {
               </motion.div>
 
               <div
-                className={`w-[50vw] flex flex-col justify-evenly gap-4 relative`}
+                className={`w-[95vw] lg:w-[50vw] flex flex-col justify-evenly gap-4 relative`}
               >
                 <span>
                   <h3 className={`text-5xl text-[#0DC5C5] font-bold`}>
@@ -101,7 +101,7 @@ export default function Projects() {
                     delay: 0.3 * index,
                     ease: "easeIn",
                   }}
-                  className={`absolute top-4 left-0 right-0 bottom-4 bg-[#0DC5C5] h-[5rem]`}
+                  className={`absolute top-0 lg:top-4 left-0 right-0 bottom-4 bg-[#0DC5C5] h-[5rem]`}
                 ></motion.div>
                 <p>{project.Description}</p>
                 <motion.ul
