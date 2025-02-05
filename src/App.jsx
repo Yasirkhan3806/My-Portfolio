@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar'
 import InteractiveBox from './Components/InteractiveBoxPointer';
 import AboutMe from './Components/About Me/AboutMe';
 import Projects from './Components/Projects/Projects';
+import Contact from './Components/Contact/Contact';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <Navbar/>
     <AboutMe/>
     <Projects/>
+    <Contact/>
     </>
   )
 }

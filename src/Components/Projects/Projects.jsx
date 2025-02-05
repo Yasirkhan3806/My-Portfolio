@@ -47,7 +47,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="p-4 z-30">
+    <div className="p-4 z-30 mb-[8rem]">
       <h1 className={`text-6xl font-bold mb-8 text-center`}>Projects</h1>
       <div className={`flex flex-col gap-12`}>
         {projects.map((project, index) => {
@@ -98,8 +98,8 @@ export default function Projects() {
                   animate={inView ? "visible" : "hidden"}
                   transition={{
                     duration: 0.6,
-                    delay: 0.3 * index,
-                    ease: "easeIn",
+                    delay: 0.4 * index,
+                    ease:'easeOut',
                   }}
                   className={`absolute top-0 lg:top-4 left-0 right-0 bottom-4 bg-[#0DC5C5] h-[5rem]`}
                 ></motion.div>
