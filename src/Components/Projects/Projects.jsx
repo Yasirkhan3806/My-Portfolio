@@ -101,7 +101,7 @@ export default function Projects() {
                     delay: 0.4 * index,
                     ease:'easeOut',
                   }}
-                  className={`absolute top-0 lg:top-4 left-0 right-0 bottom-4 bg-[#0DC5C5] h-[5rem]`}
+                  className={`absolute top-0 lg:top-4 left-0 right-0 bottom-4 bg-[#0DC5C5] h-[6rem] md:h-[5rem] lg:h-[5rem]`}
                 ></motion.div>
                 <p>{project.Description}</p>
                 <motion.ul
