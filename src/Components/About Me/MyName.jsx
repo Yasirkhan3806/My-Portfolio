@@ -19,8 +19,8 @@ export default function MyName() {
         transition={{duration:0.5,delay:0.15}}
         className="w-[100vw] lg:w-[50vw] md:w-[50vw] z-10"
       >
-        <h1 className={`text-4xl z-10`}>Hi, I'm</h1>
-        <h1 className={`text-6xl  z-10 text-[#0dc5c5] font-bold`}>Yasir Khan</h1>
+        <h1 className={`text-4xl z-10`}>Hey, I'm</h1>
+        <h1 className={`text-6xl  z-10 text-[#0dc5c5] font-bold glow-text`}>Yasir Khan</h1>
       </motion.div>
       <motion.div
         animate={{ scale: [1, 1.2, 1] }} // Scale up and down
