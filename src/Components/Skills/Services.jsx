@@ -26,7 +26,7 @@ console.log(inView)
 
   const services = [
     "Full Stack Development",
-    "Specialized In FrontEnd Development",
+    "Chatbot and AI Development",
     "Web Design And Development",
   ];
 

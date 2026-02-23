@@ -32,12 +32,17 @@ export default function Links() {
   ];
 
   return (
-    <ul className="flex gap-4 w-full">
+    <ul className="flex gap-6 w-full px-4 md:px-0 mt-2 z-10 relative">
       {imgsArray.map((item, index) => (
         <li key={index}>
-          <Tippy content={item.title}>
-            <a className="cursor-pointer" target="_blank" rel="noopener noreferrer" href={item.link}>
-              <img className="h-[24px]" src={item.img} alt={item.title} />
+          <Tippy content={item.title} placement="bottom" animation="shift-away">
+            <a
+              className="glass-panel glass-panel-hover flex justify-center items-center w-12 h-12 rounded-full cursor-pointer transition-all duration-300 hover:scale-110"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={item.link}
+            >
+              <img className="h-[22px] transition-all duration-300" src={item.img} alt={item.title} style={{ filter: "brightness(0) invert(1)" }} />
             </a>
           </Tippy>
         </li>

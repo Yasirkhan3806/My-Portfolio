@@ -5,7 +5,7 @@ function InteractiveBox() {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      setPosition({ x: event.clientX - 380, y: event.clientY - 380});
+      setPosition({ x: event.clientX - 380, y: event.clientY - 380 });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -17,15 +17,16 @@ function InteractiveBox() {
 
   return (
     <div
-      className="interactive-box h-[50rem] w-[50rem] opacity-70  rounded-full "
+      className="interactive-box h-[50rem] w-[50rem] opacity-40 rounded-full z-[-1]"
       style={{
-        position:"fixed",
+        position: "fixed",
         left: `${position.x}px`,
         top: `${position.y}px`,
-        pointerEvents:'none',
-        background: "radial-gradient(circle, #0DC5C520, transparent)",
+        pointerEvents: 'none',
+        background: "radial-gradient(circle, rgba(176,38,255,0.15) 0%, rgba(0,240,255,0.05) 50%, transparent 80%)",
+        transition: "top 0.1s ease-out, left 0.1s ease-out"
       }}
-    > 
+    >
     </div>
   );
 }

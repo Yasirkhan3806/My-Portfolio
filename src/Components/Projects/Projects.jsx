@@ -1,169 +1,119 @@
 import React from "react";
-import bitCoderLabsPicture from "../../assets/Pictures/festarPicture.png";
-import festarPicture from "../../assets/Pictures/bitCoderLabsPicture.png";
-import interneePicture from "../../assets/Pictures/interneePicture.png";
-import earthandmoonrotation from "../../assets/Pictures/EarthAndMoonAnimation.png";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { projectsData } from "../../data/projectsData";
 
 export default function Projects() {
-  const projects = [
-    {
-      Title: "Festar Meetup",
-      SubTitle: "Virtual Hosting Platform",
-      img: festarPicture,
-      Description:
-        "Fester Meetup is an innovative virtual meeting platform designed to provide seamless and efficient communication. Built with React, Tailwind CSS, Firebase, and AgoraRTC, Fester offers high-quality video conferencing and real-time chat functionality, making online collaboration effortless.",
-      techStack: ["ReactJs", "TailwindCss", "Firebase", "AgoraRTC"],
-      link: "https://fester-meetup.web.app",
-    },
-    {
-      Title: "BitCodersLab Clone",
-      SubTitle: "BitCodersLabs.com is a software house website",
-      img: bitCoderLabsPicture,
-      Description:
-        "The BitCodersLab Clone is a web-based platform designed to replicate the functionality and user experience of BitCodersLab. This project showcases my ability to develop interactive and scalable learning platforms.",
-      techStack: ["HTML", "CSS", "Vanilla Javascript"],
-      link: "https://bit-coder-labs-clone.vercel.app",
-    },
-    {
-      Title: "Internee.pk Redesign",
-      SubTitle: "Internee.pk is an internship provider",
-      img: interneePicture,
-      Description:
-        "The Internee.pk Redesign project was a comprehensive effort to enhance the user interface (UI) and user experience (UX) of the platform while improving its overall performance. The primary goal was to create a modern, intuitive, and visually appealing design that aligns with industry standards and improves accessibility for users.",
-      techStack: ["ReactJs", "CSS"],
-      link: "https://internee-redesign.web.app",
-    },
-    {
-      Title: "3D Animation",
-      SubTitle: "A 3D Space Simulation",
-      img: earthandmoonrotation,
-      Description:
-        "This project is a realistic 3D simulation of the Earth and Moon rotation, built using Three.js. The goal was to create an interactive, visually stunning representation of celestial motion, showcasing my skills in 3D rendering, physics-based animations, and WebGL development.",
-      techStack: ["JavaScript", "ThreeJs", "CSS"],
-      link: "https://three-beta-two.vercel.app",
-    },
-  ];
+  const topProjects = projectsData.slice(0, 4);
 
   return (
-    <div className="p-4 z-30 mb-[8rem]">
-      <h1 className={`text-6xl font-bold mb-8 text-center`}>Projects</h1>
-      <div className={`flex flex-col gap-12`}>
-        {projects.map((project, index) => {
+    <div className="p-4 z-30 mb-[8rem] flex flex-col items-center">
+      <h1 className="text-5xl md:text-6xl font-bold mb-16 text-center cosmic-gradient-text tracking-tighter">Selected Work</h1>
+      <div className="flex flex-col gap-16 w-full max-w-7xl">
+        {topProjects.map((project, index) => {
           const { ref, inView } = useInView({
             triggerOnce: false,
-            threshold: 0.2,
+            threshold: 0.15,
           });
 
           return (
-            <motion.div ref={ref} key={index} className={`flex flex-col lg:flex-row gap-6 p-2`}>
+            <motion.div
+              ref={ref}
+              key={index}
+              className="glass-panel glass-panel-hover flex flex-col lg:flex-row gap-8 p-6 md:p-8 rounded-3xl relative overflow-hidden group"
+            >
+              {/* Decorative Subtle Background Glow */}
+              <div className="absolute -top-32 -left-32 w-64 h-64 bg-[#00F0FF] rounded-full mix-blend-screen filter blur-[100px] opacity-10 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none"></div>
+              <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-[#B026FF] rounded-full mix-blend-screen filter blur-[100px] opacity-10 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none"></div>
+
               <motion.div
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={{
-                  hidden: { opacity: 0, x: -100 },
+                  hidden: { opacity: 0, x: -50 },
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.5, delay: 0.2 * index },
+                    transition: { duration: 0.6, ease: "easeOut" },
                   },
                 }}
-                className={`w-[95vw] lg:w-[50vw] border-2 border-[#0DC5C5] rounded-xl shadow-lg`}
+                className="w-full lg:w-[45%] h-64 md:h-80 lg:h-auto rounded-2xl overflow-hidden relative"
               >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
                 <img
-                  className={`rounded-xl`}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                   src={project.img}
                   alt={project.Title}
                 />
               </motion.div>
 
-              <div
-                className={`w-[95vw] lg:w-[50vw] flex flex-col justify-evenly gap-4 relative`}
-              >
-                <span>
-                  <h3 className={`text-5xl text-[#0DC5C5] font-bold`}>
+              <div className="w-full lg:w-[55%] flex flex-col justify-center gap-5 relative z-10">
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight group-hover:text-[#00F0FF] transition-colors duration-300">
                     {project.Title}
                   </h3>
-                  <h4 className={`text-xl text-[#087c80b7] font-semibold`}>
+                  <h4 className="text-lg md:text-xl text-[#00F0FF]/80 font-medium">
                     {project.SubTitle}
                   </h4>
-                </span>
-                <motion.div
-                  variants={{
-                    hidden: { left: 0 },
-                    visible: { left: "100%" },
-                  }}
-                  initial="hidden"
-                  animate={inView ? "visible" : "hidden"}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.4 * index,
-                    ease:'easeOut',
-                  }}
-                  className={`absolute top-0 lg:top-4 left-0 right-0 bottom-4 bg-[#0DC5C5] h-[6rem] md:h-[5rem] lg:h-[5rem]`}
-                ></motion.div>
-                <p>{project.Description}</p>
+                </div>
+
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  {project.Description}
+                </p>
+
                 <motion.ul
                   variants={{
                     hidden: { opacity: 0 },
                     visible: {
                       opacity: 1,
-                      transition: {
-                        staggerChildren: 0.4, // Delay between each child animation
-                      },
+                      transition: { staggerChildren: 0.1 },
                     },
                   }}
                   initial="hidden"
-                  animate={inView ? "visible" : "hidden"} // Reacts to scrolling
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.6 * index,
-                    ease: "easeIn",
-                  }}
-                  className={`flex flex-wrap gap-2`}
+                  animate={inView ? "visible" : "hidden"}
+                  className="flex flex-wrap gap-2 mt-2"
                 >
                   {project.techStack.map((skill, i) => (
                     <motion.li
-                    variants={{ hidden: { y: 100, opacity: 0 },
-                    visible: {
-                      y: 0,
-                      opacity: 1,
-                      transition: { type: "spring", stiffness: 100 },
-                    },}}
+                      variants={{
+                        hidden: { y: 20, opacity: 0 },
+                        visible: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } },
+                      }}
                       key={i}
-                      className={`py-3 px-4 bg-[#0dc5c517] rounded-full`}
+                      className="py-1.5 px-4 bg-white/5 border border-white/10 rounded-full text-xs md:text-sm text-gray-200 font-medium backdrop-blur-md"
                     >
                       {skill}
                     </motion.li>
                   ))}
                 </motion.ul>
-                <a
+
+                <div className="mt-4">
+                  <a
                     href={project.link}
-                    className="animated-button w-52"
-                    target="blank"
+                    className="animated-button w-max"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      class="arr-2"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-                    </svg>
-                    <span class="text">Show Project</span>
-                    <span class="circle"></span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      class="arr-1"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <span className="text">View Live Project</span>
+                    <span className="circle"></span>
+                    <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
                       <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                     </svg>
                   </a>
+                </div>
               </div>
             </motion.div>
           );
         })}
+      </div>
+      <div className="mt-16 z-20">
+        <Link
+          to="/projects"
+          className="px-8 py-3 rounded-full text-white font-bold bg-gradient-to-r from-[#00F0FF]/50 to-[#B026FF]/50 hover:from-[#00F0FF] hover:to-[#B026FF] border border-[#00F0FF]/50 hover:border-[#B026FF] transition-all duration-300 shadow-[0_0_15px_rgba(176,38,255,0.4)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] backdrop-blur-md"
+        >
+          View All Projects
+        </Link>
       </div>
     </div>
   );
